@@ -30,5 +30,27 @@ class Machine {
     }
   };
 }
-let machine = new Machine();
-machine.run();
+// let machine = new Machine();
+// machine.run();
+
+class CofeeMachine extends Machine {
+  constructor() {
+    super();
+    this.drink = "вода";
+  }
+
+  run(drink) {
+    if (drink != undefined) this.drink = drink;
+    document.writeln("Приготування: " + this.drink + " ");
+    if (this.drink == "латте") {
+      this.time = 5000;
+    }
+    if (this.drink == "espresso") {
+      this.time = 3000;
+    }
+    super.run();
+  }
+}
+
+let cofeeMachine = new CofeeMachine();
+cofeeMachine.run("espresso");

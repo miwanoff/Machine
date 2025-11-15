@@ -54,4 +54,4 @@ CofeeMachine.prototype.run = function (drink) {
 };
 
 let cofeeMachine = new CofeeMachine();
-cofeeMachine.run("espresso");
+cofeeMachine.run("латте");
