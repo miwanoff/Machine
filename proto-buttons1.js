@@ -7,10 +7,10 @@ function Machine(info) {
 }
 
 Machine.prototype.run = function () {
-//   try {
-//     if (this.state == "started") {
-//       throw new Error("Машина зайнята!");
-//     } else {
+  try {
+    if (this.state == "started") {
+      throw new Error("Машина зайнята!");
+    } else {
       this.state = "started";
       this.info.innerHTML = "Починаю роботу...";
       this.info.innerHTML += "Час приготування - " + this.time + " ";
@@ -22,10 +22,10 @@ Machine.prototype.run = function () {
       );
       this.timer = setTimeout(this.onReady.bind(this), this.time);
       this.info.innerHTML += this.state;
- //   }
-//   } catch (ex) {
-//     this.info.innerHTML += espresso.message;
-//   }
+    }
+  } catch (ex) {
+    this.info.innerHTML += espresso.message;
+  }
 };
 
 Machine.prototype.onReady = function () {
